@@ -10,16 +10,16 @@ export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [showGifs, setShowGifs] = useState(true);
   const [showEgg, setShowEgg] = useState(false);
-  const eggAudioRef = useRef(new Audio("/confess.mp3")); 
+  const eggAudioRef = useRef(new Audio("./confess.mp3")); 
   const audioRef = useRef(null);
 
   const playlist = [
-    { title: "CaramelDancer", artist: "Caramella Girls", duration: "5:2:56", src: "/caramel.mp3", cover: "/dance.jpeg" },
-    { title: "Careless Whisper", artist: "George Michael", duration: "5:03", src: "/Careless_Whisper.mp3", cover: "/careless.jpg" },
-    { title: "Thalassophobia", artist: "Aphøtic", duration: "5:38", src: "/hardtekka.mp3", cover: "/tekk.jpg" },
-    { title: "Not Alone", artist: "Micheal Jackson", duration: "2:01", src: "/Not_alone.mp3", cover: "/horror.jpg" },
-    { title: "som1callsomebody", artist: "surauh0ly", duration: "2:14", src: "/somebody.mp3", cover: "/someone.jpeg" },
-    { title: "Trunks (From Highest 2 Lowest)", artist: "A$AP Rocky", duration: "3:46", src: "/trunk.mp3", cover: "/travy.png" }
+    { title: "CaramelDancer", artist: "Caramella Girls", duration: "5:2:56", src: "./caramel.mp3", cover: "./dance.jpeg" },
+    { title: "Careless Whisper", artist: "George Michael", duration: "5:03", src: "./Careless_Whisper.mp3", cover: "./careless.jpg" },
+    { title: "Thalassophobia", artist: "Aphøtic", duration: "5:38", src: "./hardtekka.mp3", cover: "./tekk.jpg" },
+    { title: "Not Alone", artist: "Micheal Jackson", duration: "2:01", src: "./Not_alone.mp3", cover: "./horror.jpg" },
+    { title: "som1callsomebody", artist: "surauh0ly", duration: "2:14", src: "./somebody.mp3", cover: "./someone.jpeg" },
+    { title: "Trunks (From Highest 2 Lowest)", artist: "A$AP Rocky", duration: "3:46", src: "./trunk.mp3", cover: "./travy.png" }
   ];
 
   useEffect(() => {
@@ -55,13 +55,13 @@ export default function App() {
       <audio ref={audioRef} src={playlist[currentSong].src} onEnded={() => setCurrentSong((c) => (c + 1) % playlist.length)} />
           {isPlaying && showGifs && (
           <div style={{ position: 'absolute', width: '100%', height: '100%', pointerEvents: 'none' }}>
-            <img src="dance2.gif" style={{ position: 'absolute', top: '7%', left: '20%', width: '220px' }} alt="dance" />
-            <img src="dance2.gif" style={{ position: 'absolute', top: '3%', left: '30%', width: '220px' }} alt="dance" />
-            <img src="drogon.gif" style={{ position: 'absolute', bottom: '10%', right: '25%', width: '450px' }} alt="dance" />
+            <img src="./dance2.gif" style={{ position: 'absolute', top: '7%', left: '20%', width: '220px' }} alt="dance" />
+            <img src="./dance2.gif" style={{ position: 'absolute', top: '3%', left: '30%', width: '220px' }} alt="dance" />
+            <img src="./drogon.gif" style={{ position: 'absolute', bottom: '10%', right: '25%', width: '450px' }} alt="dance" />
           </div>
     )}
-    <img src="anime1.gif"  style={{ position: 'absolute', top: '15%', right: '15%', width: '200px',transform: `rotate(${currentTime * 20}deg)`, transition: 'transform 0.1s linear' }} alt="spinning-vibe" />
-    <img src="rat1.gif"  style={{ position: 'absolute', top: '50%', left: '5%', width: '300px',transform: `rotate(${currentTime * 60}deg)`, transition: 'transform 0.1s linear' }} alt="spinning-vibe" />
+    <img src="./anime1.gif"  style={{ position: 'absolute', top: '15%', right: '15%', width: '200px',transform: `rotate(${currentTime * 20}deg)`, transition: 'transform 0.1s linear' }} alt="spinning-vibe" />
+    <img src="./rat1.gif"  style={{ position: 'absolute', top: '50%', left: '5%', width: '300px',transform: `rotate(${currentTime * 60}deg)`, transition: 'transform 0.1s linear' }} alt="spinning-vibe" />
 
       <div style={{ width: '360px', backgroundColor: '#1e293b', color: 'white', borderRadius: '30px', overflow: 'hidden', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.4)' }}>
 
@@ -74,7 +74,7 @@ export default function App() {
         {showEgg && (
       <div style={{position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',backgroundColor: 'rgba(2, 6, 23, 0.95)', display: 'flex', alignItems: 'center',justifyContent: 'center', zIndex: 100, padding: '20px', textAlign: 'center'}}>
         <div style={{ maxWidth: '500px', color: 'white', fontFamily: 'monospace' }}>
-          <img src="/dev.jpg" style={{ width: '350px', borderRadius: '15px', marginBottom: '20px', border: '2px solid #f472b6' }} alt="The Dev" />
+          <img src="./dev.jpg" style={{ width: '350px', borderRadius: '15px', marginBottom: '20px', border: '2px solid #f472b6' }} alt="The Dev" />
             <p style={{ lineHeight: '1.6', fontSize: '14px', letterSpacing: '1px' }}>
               <p>To the dearest who ever is reading this.</p> <p>This is done on a Saturday Night at 4am (It's already Monday).</p> 
               <p>I had too much energy and coded this thanks for witnessing my abomination. Enjoy your day, and here’s a cool picture of me, the developer!</p>
